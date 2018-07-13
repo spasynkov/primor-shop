@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://xml.netbeans.org/schema/gestion" xmlns:ns1="http://xml.netbeans.org/schema/comun" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://xml.netbeans.org/schema/gestion">
+
+<xs:import namespace="http://xml.netbeans.org/schema/comun" schemaLocation="http://62.15.232.241:9090/WebConnector/GestionService?xsd=2"/>
+
+<xs:complexType name="PrecioArticuloResponse">
+<xs:sequence>
+<xs:element name="PrecioArticulo" type="tns:PrecioArticulo" form="qualified"/>
+<xs:element name="Respuesta" type="ns1:Respuesta" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PrecioArticulo">
+<xs:sequence>
+<xs:element name="Pvp" type="xs:double" form="qualified"/>
+<xs:element name="PrecioMedio" type="xs:double" form="qualified"/>
+<xs:element name="Costo" type="xs:double" form="qualified"/>
+<xs:element name="PrecioUltimaCompra" type="xs:double" form="qualified"/>
+<xs:element name="Descuento1" type="xs:double" form="qualified"/>
+<xs:element name="Descuento2" type="xs:double" form="qualified"/>
+<xs:element name="Descuento3" type="xs:double" form="qualified"/>
+<xs:element name="Descuento4" type="xs:double" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DocumentoPdfResponse">
+<xs:sequence>
+<xs:element name="DocumentoPdf" type="xs:string" form="qualified"/>
+<xs:element name="Respuesta" type="ns1:Respuesta" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DocumentoResponse">
+<xs:sequence>
+<xs:element name="Documento" type="tns:Documento" form="qualified"/>
+<xs:element name="Respuesta" type="ns1:Respuesta" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Documento">
+<xs:sequence>
+<xs:element name="Serie" type="xs:string" form="qualified"/>
+<xs:element name="Numero" type="xs:unsignedInt" form="qualified"/>
+<xs:element name="Fecha" type="xs:string" form="qualified"/>
+<xs:element name="Cliente" type="ns1:Cliente" form="qualified"/>
+<xs:element name="DireccionEntrega" type="ns1:Persona" form="qualified"/>
+<xs:element name="DireccionFacturacion" type="ns1:Persona" form="qualified"/>
+<xs:element name="TipoDocumento" type="xs:short" form="qualified"/>
+<xs:element name="TipoVenta" type="xs:short" form="qualified"/>
+<xs:element name="Tipo" type="xs:short" form="qualified"/>
+<xs:element name="Unidades" type="ns1:Unidad" form="qualified"/>
+<xs:element name="Bruto" type="xs:double" form="qualified"/>
+<xs:element name="Importe" type="xs:double" form="qualified"/>
+<xs:element name="Efectivo" type="xs:double" form="qualified"/>
+<xs:element name="Dto1" type="xs:double" form="qualified"/>
+<xs:element name="Dto2" type="xs:double" form="qualified"/>
+<xs:element name="DtoPP" type="xs:double" form="qualified"/>
+<xs:element name="IDto1" type="xs:double" form="qualified"/>
+<xs:element name="IDto2" type="xs:double" form="qualified"/>
+<xs:element name="IDtoPP" type="xs:double" form="qualified"/>
+<xs:element name="Bases" type="ns1:Unidad" form="qualified"/>
+<xs:element name="Iva" type="ns1:Unidad" form="qualified"/>
+<xs:element name="ImporteIva" type="ns1:Unidad" form="qualified"/>
+<xs:element name="Recargo" type="ns1:Unidad" form="qualified"/>
+<xs:element name="ImporteRecargo" type="ns1:Unidad" form="qualified"/>
+<xs:element name="SuPedido" type="xs:string" form="qualified"/>
+<xs:element name="SuDepartamento" type="xs:string" form="qualified"/>
+<xs:element name="Identicket" type="xs:string" form="qualified"/>
+<xs:element name="FechaServicio" type="xs:string" form="qualified"/>
+<xs:element name="Observaciones" type="xs:string" form="qualified"/>
+<xs:element name="Distribucion" type="xs:short" form="qualified"/>
+<xs:element name="IncidenciaDocumento" type="ns1:Tabla" form="qualified"/>
+<xs:element name="Proveedor" type="ns1:Tabla" form="qualified"/>
+<xs:element name="FormaPago" type="ns1:Tabla" form="qualified"/>
+<xs:element name="DocumentoLinea" type="tns:DocumentoLinea" form="qualified" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DocumentoLinea">
+<xs:sequence>
+<xs:element name="NumeroLinea" type="xs:unsignedInt" form="qualified"/>
+<xs:element name="Articulo" type="ns1:Articulo" form="qualified"/>
+<xs:element name="Unidades" type="ns1:Unidad" form="qualified"/>
+<xs:element name="Pvp" type="xs:double" form="qualified"/>
+<xs:element name="Importe" type="xs:double" form="qualified"/>
+<xs:element name="TipoLinea" type="xs:short" form="qualified"/>
+<xs:element name="CantidadCobrada" type="xs:double" form="qualified"/>
+<xs:element name="Precio" type="xs:double" form="qualified"/>
+<xs:element name="PrecioNeto" type="xs:double" form="qualified"/>
+<xs:element name="PrecioMinimo" type="xs:double" form="qualified"/>
+<xs:element name="PromocionPrecio" type="xs:double" form="qualified"/>
+<xs:element name="TPromocionPrecio" type="ns1:Tabla" form="qualified"/>
+<xs:element name="TarifaAplicada" type="ns1:Tabla" form="qualified"/>
+<xs:element name="PvpTarifa" type="xs:double" form="qualified"/>
+<xs:element name="TDescuentoImporte" type="ns1:Tabla" form="qualified"/>
+<xs:element name="TDescuentoPorcentaje1" type="ns1:Tabla" form="qualified"/>
+<xs:element name="TDescuentoPorcentaje2" type="ns1:Tabla" form="qualified"/>
+<xs:element name="DescuentoImporte" type="xs:double" form="qualified"/>
+<xs:element name="DescuentoPorcentaje1" type="xs:double" form="qualified"/>
+<xs:element name="DescuentoPorcentaje2" type="xs:double" form="qualified"/>
+<xs:element name="TPromocionImporte" type="ns1:Tabla" form="qualified"/>
+<xs:element name="TPromocionDescuento" type="ns1:Tabla" form="qualified"/>
+<xs:element name="TPromocionMercancia" type="ns1:Tabla" form="qualified"/>
+<xs:element name="TPromocionMercanciaEspecial" type="ns1:Tabla" form="qualified"/>
+<xs:element name="PromocionImporte" type="xs:double" form="qualified"/>
+<xs:element name="PromocionDescuento" type="xs:double" form="qualified"/>
+<xs:element name="MercanciaEntrega" type="xs:double" form="qualified"/>
+<xs:element name="MercanciaCobra" type="xs:double" form="qualified"/>
+<xs:element name="MercanciaEspecialEntrega" type="xs:double" form="qualified"/>
+<xs:element name="MercanciaEspecialCobra" type="xs:double" form="qualified"/>
+<xs:element name="MercanciaEspecialArticulo" type="ns1:Articulo" form="qualified"/>
+<xs:element name="UnidadesMercanciaEspecial" type="xs:double" form="qualified"/>
+<xs:element name="Bruto" type="xs:double" form="qualified"/>
+<xs:element name="Neto" type="xs:double" form="qualified"/>
+<xs:element name="ImportePromocionImporte" type="xs:double" form="qualified"/>
+<xs:element name="ImporteDescuentoImporte" type="xs:double" form="qualified"/>
+<xs:element name="ImportePromocionPorcentaje" type="xs:double" form="qualified"/>
+<xs:element name="ImporteDescuentoPorcentaje1" type="xs:double" form="qualified"/>
+<xs:element name="ImporteDescuentoPorcentaje2" type="xs:double" form="qualified"/>
+<xs:element name="PvpManual" type="xs:boolean" form="qualified"/>
+<xs:element name="IncidenciaLinea" type="ns1:Tabla" form="qualified"/>
+<xs:element name="Observaciones" type="xs:string" form="qualified"/>
+<xs:element name="IncidenciaDevolucion" type="ns1:Tabla" form="qualified"/>
+<xs:element name="LineaManual" type="xs:boolean" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PedidosResponse">
+<xs:sequence>
+<xs:element name="Pedido" type="tns:Pedido" form="qualified" maxOccurs="unbounded"/>
+<xs:element name="Respuesta" type="ns1:Respuesta" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Pedido">
+<xs:sequence>
+<xs:element name="Serie" type="xs:string" form="qualified"/>
+<xs:element name="Numero" type="xs:unsignedInt" form="qualified"/>
+<xs:element name="Fecha" type="xs:string" form="qualified"/>
+<xs:element name="FechaServicio" type="xs:string" form="qualified"/>
+<xs:element name="Cliente" type="ns1:Cliente" form="qualified"/>
+<xs:element name="Unidades" type="xs:double" form="qualified"/>
+<xs:element name="Importe" type="xs:double" form="qualified"/>
+<xs:element name="Observaciones" type="xs:string" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PedidoExt">
+<xs:sequence>
+<xs:element name="Serie" type="xs:string" form="qualified"/>
+<xs:element name="Numero" type="xs:unsignedInt" form="qualified"/>
+<xs:element name="Fecha" type="xs:string" form="qualified"/>
+<xs:element name="SuPedido" type="xs:string" form="qualified"/>
+<xs:element name="FechaServicio" type="xs:string" form="qualified"/>
+<xs:element name="Cliente" type="ns1:Cliente" form="qualified"/>
+<xs:element name="Observaciones" type="xs:string" form="qualified"/>
+<xs:element name="DireccionEntrega" type="ns1:Persona" form="qualified"/>
+<xs:element name="DireccionFacturacion" type="ns1:Persona" form="qualified"/>
+<xs:element name="FormaPago" type="xs:string" form="qualified"/>
+<xs:element name="Bruto" type="xs:double" form="qualified"/>
+<xs:element name="Descuento" type="xs:double" form="qualified"/>
+<xs:element name="Importe" type="xs:double" form="qualified"/>
+<xs:element name="ReferenciaPago" type="xs:string" form="qualified"/>
+<xs:element name="GastosEnvio" type="xs:double" form="qualified"/>
+<xs:element name="AgenciaTransporte" type="xs:short" form="qualified"/>
+<xs:element name="Retorno" type="xs:short" form="qualified"/>
+<xs:element name="PedidoLinea" type="tns:PedidoLinea" form="qualified" maxOccurs="unbounded"/>
+<xs:element name="CentroRecogida" type="xs:string" form="qualified"/>
+<xs:element name="ParaRegalo" type="xs:boolean" form="qualified"/>
+<xs:element name="ParaRegaloMsg" type="xs:string" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PedidoLinea">
+<xs:sequence>
+<xs:element name="NumeroLinea" type="xs:unsignedInt" form="qualified"/>
+<xs:element name="Articulo" type="ns1:Articulo" form="qualified"/>
+<xs:element name="Unidad1" type="xs:double" form="qualified"/>
+<xs:element name="Unidad2" type="xs:double" form="qualified"/>
+<xs:element name="Unidad3" type="xs:double" form="qualified"/>
+<xs:element name="Pvp" type="xs:double" form="qualified"/>
+<xs:element name="Descuento" type="xs:double" form="qualified"/>
+<xs:element name="Importe" type="xs:double" form="qualified"/>
+<xs:element name="Observaciones" type="xs:string" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PedidoResponse">
+<xs:sequence>
+<xs:element name="Pedido" type="tns:PedidoExt" form="qualified"/>
+<xs:element name="Respuesta" type="ns1:Respuesta" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Pedido2Response">
+<xs:sequence>
+<xs:element name="Pedido" type="tns:Pedido" form="qualified"/>
+<xs:element name="PedidoLinea" type="tns:PedidoLinea" form="qualified" maxOccurs="unbounded"/>
+<xs:element name="Respuesta" type="ns1:Respuesta" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://xml.netbeans.org/schema/comun" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://xml.netbeans.org/schema/comun">
+
+<xs:complexType name="Respuesta">
+<xs:sequence>
+<xs:element name="Id" type="xs:int" default="1"/>
+<xs:element name="Mensaje" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Cliente">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string"/>
+<xs:element name="Centro" type="xs:string"/>
+<xs:element name="NombreComercial" type="xs:string"/>
+<xs:element name="NombreFiscal" type="xs:string"/>
+<xs:element name="Domicilio" type="xs:string"/>
+<xs:element name="Poblacion" type="xs:string"/>
+<xs:element name="Provincia" type="xs:string"/>
+<xs:element name="CodigoPostal" type="xs:string"/>
+<xs:element name="CIF" type="xs:string"/>
+<xs:element name="Observaciones" type="xs:string"/>
+<xs:element name="Telefono" type="xs:string"/>
+<xs:element name="Fax" type="xs:string"/>
+<xs:element name="Email" type="xs:string"/>
+<xs:element name="RecargoEquivalencia" type="xs:byte"/>
+<xs:element name="Zona" type="tns:Tabla"/>
+<xs:element name="Ruta" type="tns:Tabla"/>
+<xs:element name="FormaPago" type="tns:Tabla"/>
+<xs:element name="Representante" type="tns:Tabla"/>
+<xs:element name="Autoventa" type="tns:Tabla"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tabla">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string"/>
+<xs:element name="Nombre" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Persona">
+<xs:sequence/>
+<xs:attribute name="Nombre" type="xs:string"/>
+<xs:attribute name="Apellidos" type="xs:string"/>
+<xs:attribute name="Domicilio" type="xs:string"/>
+<xs:attribute name="Poblacion" type="xs:string"/>
+<xs:attribute name="Provincia" type="xs:string"/>
+<xs:attribute name="DNI" type="xs:string"/>
+<xs:attribute name="CodigoPostal" type="xs:string"/>
+<xs:attribute name="Pais" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="Unidad">
+<xs:sequence>
+<xs:element name="Unid1" type="xs:double"/>
+<xs:element name="Unid2" type="xs:double"/>
+<xs:element name="Unid3" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Articulo">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string"/>
+<xs:element name="Descripcion" type="xs:string"/>
+<xs:element name="DescripcionAbreviada" type="xs:string"/>
+<xs:element name="Referencia" type="xs:string"/>
+<xs:element name="CodigoBarras" type="xs:string"/>
+<xs:element name="UnidadesCodigoBarras" type="xs:unsignedShort"/>
+<xs:element name="FechaUltimaCompra" type="xs:string"/>
+<xs:element name="Proveedor" type="tns:Proveedor"/>
+<xs:element name="Familia" type="tns:Tabla"/>
+<xs:element name="Marca" type="tns:Tabla"/>
+<xs:element name="UnidadesPrecio" type="xs:double"/>
+<xs:element name="Estado" type="xs:byte"/>
+<xs:element name="StockMin" type="xs:double"/>
+<xs:element name="StockMax" type="xs:double"/>
+<xs:element name="ControlLote" type="xs:byte"/>
+<xs:element name="ControlCaducidad" type="xs:byte"/>
+<xs:element name="TipoUnidad" type="xs:byte"/>
+<xs:element name="Conversion1" type="xs:double"/>
+<xs:element name="Conversion2" type="xs:double"/>
+<xs:element name="Ubicacion" type="xs:string"/>
+<xs:element name="IdIva" type="xs:unsignedInt"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Proveedor">
+<xs:sequence>
+<xs:element name="Codigo" type="xs:string"/>
+<xs:element name="Nombre" type="xs:string"/>
+<xs:element name="FechaUltimaCompra" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

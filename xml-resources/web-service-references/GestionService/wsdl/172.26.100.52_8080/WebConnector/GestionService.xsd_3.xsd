@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws/" xmlns:ns2="http://xml.netbeans.org/schema/comun" xmlns:ns1="http://xml.netbeans.org/schema/gestion" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws/">
+
+<xs:import namespace="http://xml.netbeans.org/schema/gestion" schemaLocation="http://62.15.232.241:9090/WebConnector/GestionService?xsd=1"/>
+
+<xs:import namespace="http://xml.netbeans.org/schema/comun" schemaLocation="http://62.15.232.241:9090/WebConnector/GestionService?xsd=2"/>
+
+<xs:element name="getDocumento" type="tns:getDocumento"/>
+
+<xs:element name="getDocumentoPdf" type="tns:getDocumentoPdf"/>
+
+<xs:element name="getDocumentoPdfResponse" type="tns:getDocumentoPdfResponse"/>
+
+<xs:element name="getDocumentoResponse" type="tns:getDocumentoResponse"/>
+
+<xs:element name="getPedido" type="tns:getPedido"/>
+
+<xs:element name="getPedidoResponse" type="tns:getPedidoResponse"/>
+
+<xs:element name="getPedidosAgenteFecha" type="tns:getPedidosAgenteFecha"/>
+
+<xs:element name="getPedidosAgenteFechaResponse" type="tns:getPedidosAgenteFechaResponse"/>
+
+<xs:element name="getPedidosPendienteCliente" type="tns:getPedidosPendienteCliente"/>
+
+<xs:element name="getPedidosPendienteClienteResponse" type="tns:getPedidosPendienteClienteResponse"/>
+
+<xs:element name="getPrecioArticulo" type="tns:getPrecioArticulo"/>
+
+<xs:element name="getPrecioArticuloResponse" type="tns:getPrecioArticuloResponse"/>
+
+<xs:element name="setDocumento" type="tns:setDocumento"/>
+
+<xs:element name="setDocumentoResponse" type="tns:setDocumentoResponse"/>
+
+<xs:element name="setPedido" type="tns:setPedido"/>
+
+<xs:element name="setPedidoResponse" type="tns:setPedidoResponse"/>
+
+<xs:element name="setPedidoWeb" type="tns:setPedidoWeb"/>
+
+<xs:element name="setPedidoWeb2" type="tns:setPedidoWeb2"/>
+
+<xs:element name="setPedidoWeb2Response" type="tns:setPedidoWeb2Response"/>
+
+<xs:element name="setPedidoWeb3" type="tns:setPedidoWeb3"/>
+
+<xs:element name="setPedidoWeb3Response" type="tns:setPedidoWeb3Response"/>
+
+<xs:element name="setPedidoWebResponse" type="tns:setPedidoWebResponse"/>
+
+<xs:complexType name="getPrecioArticulo">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="idArticulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPrecioArticuloResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:PrecioArticuloResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocumentoPdf">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoDocumento" type="xs:string" minOccurs="0"/>
+<xs:element name="serie" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocumentoPdfResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:DocumentoPdfResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocumento">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="tipoDocumento" type="xs:string" minOccurs="0"/>
+<xs:element name="serie" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDocumentoResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:DocumentoResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPedidosAgenteFecha">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="agente" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaInicio" type="xs:string" minOccurs="0"/>
+<xs:element name="fechaFin" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPedidosAgenteFechaResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:PedidosResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPedidoWeb">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="pedido" type="ns1:PedidoExt" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPedidoWebResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:PedidoResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPedido">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="pedido" type="ns1:PedidoExt" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPedidoResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:PedidoResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setDocumento">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="documento" type="ns1:Documento" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setDocumentoResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:DocumentoResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPedidosPendienteCliente">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="grupo" type="xs:string" minOccurs="0"/>
+<xs:element name="clienteCodigo" type="xs:string" minOccurs="0"/>
+<xs:element name="clienteCentro" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPedidosPendienteClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:PedidosResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPedido">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="serie" type="xs:string" minOccurs="0"/>
+<xs:element name="numero" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPedidoResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:Pedido2Response" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPedidoWeb3">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="pedido" type="ns1:PedidoExt" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPedidoWeb3Response">
+<xs:sequence>
+<xs:element name="return" type="ns1:PedidoResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPedidoWeb2">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="pedido" type="ns1:PedidoExt" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setPedidoWeb2Response">
+<xs:sequence>
+<xs:element name="return" type="ns1:PedidoResponse" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://62.15.232.241:9090/WebConnector/GestionService?wsdl" uri="xml-resources/web-service-references/GestionService/wsdl/172.26.100.52_8080/WebConnector/GestionService.wsdl"/>
+    <system systemId="http://62.15.232.241:9090/WebConnector/GestionService?xsd=1" uri="xml-resources/web-service-references/GestionService/wsdl/172.26.100.52_8080/WebConnector/GestionService.xsd_1.xsd"/>
+    <system systemId="http://62.15.232.241:9090/WebConnector/GestionService?xsd=2" uri="xml-resources/web-service-references/GestionService/wsdl/172.26.100.52_8080/WebConnector/GestionService.xsd_2.xsd"/>
+    <system systemId="http://62.15.232.241:9090/WebConnector/GestionService?xsd=3" uri="xml-resources/web-service-references/GestionService/wsdl/172.26.100.52_8080/WebConnector/GestionService.xsd_3.xsd"/>
+</catalog>
