@@ -1,15 +1,36 @@
 package javaapplication42;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
 import javaapplication42.entities.*;
 
 public class Main {
+	private static String login;
+	private static String pass;
+
+	static {
+		System.setProperty("java.net.useSystemProxies", "true");
+
+		Properties props = new Properties();
+		try {
+			props.load(new FileReader("app.properties"));
+			login = props.getProperty("login");
+			pass = props.getProperty("password");
+		} catch (IOException e) {
+			login = "";
+			pass = "";
+		}
+	}
+
 	public static void main(String[] args) {
 		Order order = new Order();
 
 		SiteAccount account = new SiteAccount();
 		account.setId("0");
 		account.setPhone("952060270");
-		account.setEmail("asalaso@inerttia.es");
+		account.setEmail(login);
 		order.setSiteAccount(account);
 
 		User shippingUser = new User();
@@ -45,22 +66,14 @@ public class Main {
 		order.setPaymentMethod("R");
 
 		Item item1 = new Item();
-		item1.setItemId("0ML00001");
+		item1.setItemId("35315");
 		item1.setQuantity(1);
-		item1.setPrice(5);
+		item1.setPrice(0);
 		item1.setDiscount(0);
-		item1.setAmount(5);
+		item1.setAmount(0);
 		order.addItem(item1);
 
-		Item item2 = new Item();
-		item2.setItemId("0ML00096");
-		item2.setQuantity(2);
-		item2.setPrice(5);
-		item2.setDiscount(0);
-		item2.setAmount(10);
-		order.addItem(item2);
-
-		OrderResponse resp = Utils.sendRequest("primorUsername", "primorUsersPass", order);
+		OrderResponse resp = Utils.sendRequest(login, pass, order);
 		System.out.println(resp);
 	}
 }
